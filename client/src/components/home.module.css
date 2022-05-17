@@ -1,0 +1,14 @@
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,350px);
+    grid-template-rows: repeat(3,300px);
+    gap: 30px;
+    justify-content: center;
+}
+
+.container{
+    display: block;
+
+
+
+}

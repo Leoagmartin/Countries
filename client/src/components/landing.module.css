@@ -17,8 +17,15 @@
 .title {
     color: white;
     text-decoration: solid;
+    font-size: larger;
+    font-weight: 700;
+    width: 29ch;
     font-style: italic;
-    
+    display: block;
+    white-space: nowrap;
+    border-right: 4px solid;
+    animation: typing 3s steps(29), blink .5s infinite step-end alternate;
+    overflow: hidden;
     
 }
 
@@ -29,5 +36,25 @@
     border: 2px solid;
     padding: 10px;
     margin-bottom: 30px;
+
     
+}
+
+
+
+
+
+
+
+@keyframes typing{
+
+    from{
+        width: 0;
+    }
+}
+
+@keyframes blink{
+    50% {border-color: transparent;}
+
+
 }

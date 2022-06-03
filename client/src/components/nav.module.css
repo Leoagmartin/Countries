@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    margin-left: 30px;
+    padding-top: 20px;
+    gap:30%
+
+}
+
+
+.search button img{
+    width: 15px;
+    height: 15px;
+}
+
+.link{
+    background-color: white;
+    opacity: 50%;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: larger;
+    border: 2px solid;
+    border-radius: 4px;
+    padding: 4px;
+
+
+}
+
+.search input{
+    font-style: italic;
+    width: 300px;
+    height: 20px;
+    
+}
+
+.search p {
+    color: rgb(146, 9, 9);
+    font-style: italic;
+    font-size: large;
+    text-shadow: 1px 1px black;
+
+}

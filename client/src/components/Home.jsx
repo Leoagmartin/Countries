@@ -14,8 +14,6 @@ function Home(){
 const dispatch = useDispatch();
 let countries = useSelector(state => state.countries);
 
-
-
 let pages = Math.ceil(countries.length / 9);
 const [pageSelected,setPage] = useState(0);
 const index = pageSelected * 9;
@@ -23,23 +21,21 @@ const lastIndex = index + 9;
 const countriesPage = countries.slice(index,lastIndex);
 
 
-const paginado = (number) => {
+  const paginado = (number) => {
     setPage(number);
 
-};
+  };
 
-useEffect(() => {
-  dispatch(getAll());
+  useEffect(() => {
+     dispatch(getAll());
 
-},[]);
-
-
+  },[dispatch]);
 
 
         return <div className={s.container}>
-            <Nav/>
-            <Filters></Filters>
-            <Pagination paginado={paginado} pages={pages} />
+            <Nav paginado={paginado}/>
+            <Filters paginado={paginado}></Filters>
+            <Pagination paginado={paginado} pages={pages} currentPage={pageSelected} />
             
             <div className={s.grid}>
             {countriesPage.map(e => {

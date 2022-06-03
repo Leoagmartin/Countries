@@ -1,14 +1,23 @@
 .grid{
     display: grid;
-    grid-template-columns: repeat(3,350px);
-    grid-template-rows: repeat(3,300px);
-    gap: 30px;
+    grid-template-columns: repeat(3,300px);
+    grid-template-rows: repeat(3,119px);
+    gap: 20px;
     justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    
+
 }
 
 .container{
     display: block;
-
-
+    background-image: url("../images/bg.png");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
 
 }

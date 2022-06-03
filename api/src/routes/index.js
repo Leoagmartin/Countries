@@ -9,19 +9,24 @@ const router = Router();
 // Ejemplo: router.use('/auth', authRouter);
 
 router.get('/countries',(req,res) => {
-    let name = req.params.query;
-
+    let name = req.query.name;
+    
     try {
         if(name) {
+           
             getByQuery(name).then(query => {
+                
                 res.status(200).send(query);
             })
         }
+        else {
 
-        getCountries().then(resp => {
-        res.status(200).json(resp);
-    });
-        
+            getCountries().then(resp => {
+            res.status(200).json(resp);
+        });
+            
+            
+        }
     } catch (error) {
         console.log(error);
     }
@@ -33,11 +38,12 @@ router.get('/countries',(req,res) => {
 
 router.get('/countries/:id', (req,res) => {
     let param = req.params.id;
-
+    
    try {
        if(param) {
           getById(param).then(resp => {
-             res.status(200).json(resp)
+              
+             res.status(200).send(resp)
          }) 
         
        
@@ -51,7 +57,20 @@ router.get('/countries/:id', (req,res) => {
 });
 
 router.post('/activity', (req,res) => {
-    createActivity(req.body);
+    
+    try {
+        let activity = createActivity(req.body);
+
+
+         res.status(200).send(activity);
+
+    } catch (error) {
+        console.log(error);
+    }
+
+
+
+   
 
 
 
